@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TodoList</title>
+		<script
+			src="https://kit.fontawesome.com/c566b72226.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="icon" href="to-do.png" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="todoApp">
+			<div class="sideBar hide">
+				<div class="list">
+					<ul>
+						<li><a>ALL</a></li>
+						<li><a>College</a></li>
+						<li><a>Home</a></li>
+						<li><a>Groceries</a></li>
+						<li><a>Payments</a></li>
+						<li><a>Work</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="sideBardBtn">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+			<div class="header">
+				<h1>ToDo List</h1>
+				<input
+					type="text"
+					class="todoInput"
+					placeholder="Add new task here..."
+				/>
+				<select class="todoSelect" name="" id="">
+					<option value="" selected>Select Category</option>
+					<option value="College">College</option>
+					<option value="Groceries">Groceries</option>
+					<option value="Home">Home</option>
+					<option value="Payments">Payments</option>
+					<option value="Work">Work</option>
+				</select>
+				<button class="addBtn">Add</button>
+			</div>
+			<div class="todoList">
+				<h3>Tasks List:</h3>
+				<p class="alert"></p>
+				<ul></ul>
+			</div>
+		</div>
+
+		<div class="editPopup">
+			<h3>Edit task:</h3>
+			<div class="popupBody">
+				<p class="popupAlert"></p>
+				<input class="editInput" type="text" placeholder="Edit task" />
+				<select class="editSelect" name="" id="" menuPlacement="auto">
+					<option value="" selected>Select Category</option>
+					<option value="College">College</option>
+					<option value="Groceries">Groceries</option>
+					<option value="Home">Home</option>
+					<option value="Payments">Payments</option>
+					<option value="Work">Work</option>
+				</select>
+				<button class="confirmEdit">Confirm</button>
+				<button class="cancelEdit">Cancel</button>
+			</div>
+		</div>
+	</body>
+	<script src="js/script.js"></script>
+</html>

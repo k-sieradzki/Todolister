@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: whitesmoke;
+}
+
+.sideBar {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.sideBar::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.todoApp {
+  position: relative;
+  width: 800px;
+  background: #fff;
+  box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.todoApp .sideBar {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: -200px;
+  height: 100%;
+  background-color: #00d4ff;
+  border-radius: 15px 0 0px 15px;
+  padding: 0 20px;
+  text-align: left;
+  font-size: 1.2em;
+  overflow-y: scroll;
+}
+
+.todoApp .sideBar .list {
+  padding-top: 80px;
+  margin: auto 0;
+}
+
+.todoApp .sideBar .list ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.todoApp .sideBar .list ul li a {
+  display: inline-block;
+  color: #111;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.todoApp .show {
+  transition: 0.4s;
+  right: 0;
+}
+
+.todoApp .hide {
+  transition: 0.4s;
+  right: -200px;
+}
+
+.todoApp .hideLi {
+  display: none !important;
+}
+
+.todoApp .college,
+.todoApp .home,
+.todoApp .groceries,
+.todoApp .payments,
+.todoApp .work {
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.todoApp .work {
+  background-color: #d85353;
+}
+
+.todoApp .groceries {
+  background-color: #419741;
+}
+
+.todoApp .college {
+  background-color: #c08f33;
+}
+
+.todoApp .payments {
+  background-color: #885288;
+}
+
+.todoApp .home {
+  background-color: #7070d1;
+}
+
+.todoApp .completed {
+  font-size: 12px;
+  font-style: italic;
+  color: #cfcfcf;
+  text-decoration: line-through;
+}
+
+.todoApp .sideBardBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.todoApp .header {
+  padding: 40px;
+  background: #020024;
+  border-radius: 15px 15px 0 0;
+  background: #dd8787;
+  background: linear-gradient(90deg, #dd8787 0%, #00d4ff 100%);
+}
+
+.todoApp .header h1 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.todoApp .header .todoInput {
+  width: 70%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 10px 20px 0px;
+}
+
+.todoApp .header .addBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.todoApp .header .todoSelect {
+  padding: 9px 0px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.todoApp .todoList {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.todoApp .todoList h3 {
+  padding: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.todoApp .todoList .alert {
+  padding-bottom: 5px;
+  color: royalblue;
+}
+
+.todoApp .todoList ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  margin: 15px;
+  list-style-type: none;
+  overflow-wrap: normal;
+  background: #dd8787;
+  background: linear-gradient(90deg, rgba(221, 135, 135, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);
+}
+
+.todoApp .todoList ul li .tools {
+  display: flex;
+}
+
+.todoApp .todoList ul li .tools button {
+  padding: 15px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.editPopup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  max-width: 800px;
+  border-radius: 15px;
+  background: #00d4ff;
+  background: linear-gradient(90deg, #00d4ff 0%, #dd8787 100%);
+}
+
+.editPopup h3 {
+  padding: 20px;
+}
+
+.editPopup .popupBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.editPopup .popupBody p {
+  padding-bottom: 10px;
+  color: red;
+}
+
+.editPopup .popupBody input {
+  width: 70%;
+  padding: 10px 15px;
+  border: none;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.editPopup .popupBody .editSelect {
+  padding: 9px 0px;
+  border: none;
+  bottom: 100%;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.editPopup .popupBody button {
+  display: inline-block;
+  margin: 20px;
+  border: none;
+  padding: 10px 20px;
+  width: 30%;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: transparent;
+  cursor: pointer;
+}

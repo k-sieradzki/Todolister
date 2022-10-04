@@ -1,0 +1,255 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin-top: 120px;
+	font-family: 'Montserrat', sans-serif;
+	background-color: rgb(245, 245, 245);
+}
+
+.sideBar {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+.sideBar::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+.todoApp {
+	position: relative;
+	width: 800px;
+	background: #fff;
+	box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+	border-radius: 15px;
+	overflow: hidden;
+
+	.sideBar {
+		position: absolute;
+		display: block;
+		top: 0;
+		right: -200px;
+		height: 100%;
+		background-color: rgb(0, 212, 255);
+		border-radius: 15px 0 0px 15px;
+		padding: 0 20px;
+		text-align: left;
+		font-size: 1.2em;
+		overflow-y: scroll;
+		.list {
+			padding-top: 80px;
+			margin: auto 0;
+			ul {
+				li {
+					list-style-type: none;
+					padding: 5px;
+					a {
+						display: inline-block;
+						color: #111;
+						text-decoration: none;
+						padding: 10px;
+						width: 100%;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	.show {
+		transition: 0.4s;
+		right: 0;
+	}
+	.hide {
+		transition: 0.4s;
+		right: -200px;
+	}
+
+	.hideLi {
+		display: none !important;
+	}
+
+	.college,
+	.home,
+	.groceries,
+	.payments,
+	.work
+	{
+		color: #fff;
+		padding: 5px 15px;
+		border-radius: 20px;
+	}
+	.work{
+		
+		background-color: rgb(216, 83, 83)
+	}
+	.groceries{
+		background-color: rgb(65, 151, 65);
+	}
+	.college{
+		background-color: rgb(192, 143, 51);
+	}
+	.payments{
+		background-color: rgb(136, 82, 136);
+	}
+	.home{
+		background-color: rgb(112, 112, 209);
+	}
+
+
+
+	.completed {
+		font-size: 12px;
+		font-style: italic;
+		color: rgb(207, 207, 207);
+		text-decoration: line-through;
+	}
+
+	.sideBardBtn {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 1.5em;
+		padding: 15px;
+		cursor: pointer;
+	}
+
+	.header {
+		padding: 40px;
+		background: rgb(2, 0, 36);
+		border-radius: 15px 15px 0 0;
+		background: rgb(221, 135, 135);
+		background: linear-gradient(
+			90deg,
+			rgba(221, 135, 135, 1) 0%,
+			rgba(0, 212, 255, 1) 100%
+		);
+		h1 {
+			margin-bottom: 20px;
+			text-transform: uppercase;
+		}
+		.todoInput {
+			width: 70%;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 10px;
+			margin: 0 10px 20px 0px;
+		}
+		.addBtn {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+		.todoSelect {
+
+			padding: 9px 0px;
+			border: none;
+			border-radius: 5px;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+	}
+
+	.todoList {
+		text-align: center;
+		padding: 20px 0;
+		h3 {
+			padding: 0 0 15px 0;
+			text-transform: uppercase;
+		}
+		.alert {
+			padding-bottom: 5px;
+			color: royalblue;
+		}
+		ul {
+			li {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding-left: 20px;
+				margin: 15px;
+				list-style-type: none;
+				overflow-wrap: normal;
+				background: rgb(221, 135, 135);
+				background: linear-gradient(
+					90deg,
+					rgba(221, 135, 135, 0.15) 0%,
+					rgba(0, 212, 255, 0.15) 100%
+				);
+				.tools {
+					display: flex;
+					button {
+						padding: 15px 10px;
+						border: none;
+						background-color: transparent;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+.editPopup {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	bottom: 20px;
+	max-width: 800px;
+	border-radius: 15px;
+	background: rgb(0, 212, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(0, 212, 255, 1) 0%,
+		rgba(221, 135, 135, 1) 100%
+	);
+	h3 {
+		padding: 20px;
+	}
+	.popupBody {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 90%;
+		p {
+			padding-bottom: 10px;
+			color: red;
+		}
+		input {
+			width: 70%;
+			padding: 10px 15px;
+			border: none;
+			margin-right: 20px;
+			border-radius: 10px;
+		}
+		.editSelect{
+			padding: 9px 0px;
+			border: none;
+			bottom: 100%;
+			border-radius: 5px;
+			margin-right: 5px;
+			cursor: pointer;
+			
+		}
+		button {
+			display: inline-block;
+			margin: 20px;
+			border: none;
+			padding: 10px 20px;
+			width: 30%;
+			border-radius: 5px;
+			border: 1px solid;
+			background-color: transparent;
+			cursor: pointer;
+		}
+	}
+}
