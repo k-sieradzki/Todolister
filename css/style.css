@@ -1,13 +1,18 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: 'Montserrat', sans-serif;
   background-color: whitesmoke;
 }
@@ -30,7 +35,8 @@ body {
   width: 800px;
   min-height: 500px;
   background: #fff;
-  box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+  -webkit-box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+          box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
   border-radius: 0 0 15px 15px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -96,11 +102,13 @@ body {
 }
 
 .todoApp .show {
+  -webkit-transition: 0.4s;
   transition: 0.4s;
   right: 0;
 }
 
 .todoApp .hide {
+  -webkit-transition: 0.4s;
   transition: 0.4s;
   right: -200px;
 }
@@ -161,6 +169,7 @@ body {
   padding: 40px;
   background: #020024;
   background: #dd8787;
+  background: -webkit-gradient(linear, left top, right top, from(#dd8787), to(#00d4ff));
   background: linear-gradient(90deg, #dd8787 0%, #00d4ff 100%);
 }
 
@@ -209,14 +218,21 @@ body {
 }
 
 .todoApp .todoList ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 20px;
   margin: 15px;
   list-style-type: none;
   overflow-wrap: normal;
   background: #dd8787;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(221, 135, 135, 0.15)), to(rgba(0, 212, 255, 0.15)));
   background: linear-gradient(90deg, rgba(221, 135, 135, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);
 }
 
@@ -228,8 +244,13 @@ body {
 }
 
 .todoApp .todoList ul li .tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .todoApp .todoList ul li .tools button {
@@ -241,14 +262,22 @@ body {
 
 .editPopup {
   display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   bottom: 20px;
   max-width: 800px;
   border-radius: 15px;
   background: #00d4ff;
+  background: -webkit-gradient(linear, left top, right top, from(#00d4ff), to(#dd8787));
   background: linear-gradient(90deg, #00d4ff 0%, #dd8787 100%);
 }
 
@@ -257,10 +286,17 @@ body {
 }
 
 .editPopup .popupBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 90%;
 }
 
@@ -300,7 +336,10 @@ body {
 
 @media (min-width: 576px) {
   .todoApp .todoList ul li .tools {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
@@ -319,3 +358,4 @@ body {
     margin: auto 0;
   }
 }
+/*# sourceMappingURL=style.css.map */
