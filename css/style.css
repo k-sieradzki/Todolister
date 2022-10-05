@@ -8,7 +8,6 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 120px;
   font-family: 'Montserrat', sans-serif;
   background-color: whitesmoke;
 }
@@ -20,18 +19,21 @@ body {
   /* Firefox */
 }
 
-.sideBar::-webkit-scrollbar {
-  display: none;
+.sideBar::-webkit-scrollbar,
+.todoApp::-webkit-scrollbar {
+  display: none !important;
   /* Safari and Chrome */
 }
 
 .todoApp {
   position: relative;
   width: 800px;
+  min-height: 500px;
   background: #fff;
   box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
-  border-radius: 15px;
-  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .todoApp .sideBar {
@@ -56,6 +58,8 @@ body {
 .todoApp .sideBar .list ul li {
   list-style-type: none;
   padding: 5px;
+  border-radius: 15px;
+  margin: 5px 0;
 }
 
 .todoApp .sideBar .list ul li a {
@@ -65,6 +69,30 @@ body {
   padding: 10px;
   width: 100%;
   cursor: pointer;
+}
+
+.todoApp .sideBar .list ul li:nth-child(1) {
+  border: 2px solid #fff;
+}
+
+.todoApp .sideBar .list ul li:nth-child(2) {
+  border: 2px solid #c08f33;
+}
+
+.todoApp .sideBar .list ul li:nth-child(3) {
+  border: 2px solid #7070d1;
+}
+
+.todoApp .sideBar .list ul li:nth-child(4) {
+  border: 2px solid #419741;
+}
+
+.todoApp .sideBar .list ul li:nth-child(5) {
+  border: 2px solid #885288;
+}
+
+.todoApp .sideBar .list ul li:nth-child(6) {
+  border: 2px solid #d85353;
 }
 
 .todoApp .show {
@@ -87,8 +115,10 @@ body {
 .todoApp .payments,
 .todoApp .work {
   color: #fff;
-  padding: 5px 15px;
-  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
 }
 
 .todoApp .work {
@@ -130,7 +160,6 @@ body {
 .todoApp .header {
   padding: 40px;
   background: #020024;
-  border-radius: 15px 15px 0 0;
   background: #dd8787;
   background: linear-gradient(90deg, #dd8787 0%, #00d4ff 100%);
 }
@@ -191,8 +220,16 @@ body {
   background: linear-gradient(90deg, rgba(221, 135, 135, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);
 }
 
+.todoApp .todoList ul li p {
+  text-align: left;
+  width: 65%;
+  word-wrap: break-word;
+  margin: 5px 0;
+}
+
 .todoApp .todoList ul li .tools {
   display: flex;
+  flex-direction: column;
 }
 
 .todoApp .todoList ul li .tools button {
@@ -259,4 +296,26 @@ body {
   border: 1px solid;
   background-color: transparent;
   cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .todoApp .todoList ul li .tools {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .todoApp .todoList ul li p {
+    width: 73%;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    min-height: 100vh;
+    position: relative;
+  }
+  body .todoApp {
+    margin: auto 0;
+  }
 }

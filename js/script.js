@@ -21,7 +21,11 @@ function addNewTask() {
 	if (todoInput.value !== '') {
 		$idTask++;
 		$newTask = document.createElement('li');
-		$newTask.innerText = todoInput.value;
+
+		const taskText = document.createElement('p')
+		taskText.innerText = todoInput.value
+		$newTask.appendChild(taskText)
+
 		if (todoSelect.value !== '') {
 			$newTask.classList.add(todoSelect.value);
 		}
@@ -30,7 +34,7 @@ function addNewTask() {
 		if (todoSelect.value !== '') {
 			const category = document.createElement('div');
 			category.classList.add(todoSelect.value.toLowerCase());
-			category.innerText = todoSelect.value;
+			category.innerText = todoSelect.value.charAt(0);
 			$newTask.appendChild(category);
 		} else {
 			const category = document.createElement('div');
@@ -91,9 +95,9 @@ const editTask = e => {
 
 const changeTask = () => {
 	function childEdit() {
-		$editedTask.children[0].classList = '';
-		$editedTask.children[0].classList = editSelect.value.toLowerCase();
-		$editedTask.children[0].textContent = editSelect.value;
+		$editedTask.children[1].classList = '';
+		$editedTask.children[1].classList = editSelect.value.toLowerCase();
+		$editedTask.children[1].textContent = editSelect.value.charAt(0);
 	}
 
 	if (editInput.value !== '') {
@@ -161,6 +165,22 @@ function showSideBar() {
 	sideBar.classList.toggle('show');
 	sideBar.classList.toggle('hide');
 }
+
+
+
+// function hideCategory(){
+// 	let test = document.querySelectorAll('.todoList ul li')
+// 	for(i=0; i<test.length; i++){
+// 		if(test[i].classList !== 'none'){
+// 			test[i].children[1].classList.toggle('showCategory')
+// 		}else{
+// 			test[i].children[1].classList.toggle('hideCategory')
+// 		}
+// 	}
+// }
+
+
+
 
 const localStorageTasks = () => {
 	let taskContent = document.querySelector('.todoList ul').innerHTML;
